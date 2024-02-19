@@ -12,6 +12,9 @@ public class FilmStudio {
     public void addFilm(Film film) {
         films.add(film);
     }
+    public String getStudio_name() {
+        return studio_name;
+    }
     public Film longestFilm() {
         Film longest_film = null;
         int longest = 0;
@@ -34,8 +37,14 @@ public class FilmStudio {
         }
         return total / count;
     }
-    public List filmsLessThan() {
-
+    public List<Film> filmsLessThan(float amount) {
+        List<Film> filmsLessThan = new ArrayList<>();
+        for (Film film : films) {
+            if (film.getEarnings() < amount) {
+                filmsLessThan.add(film);
+            }
+        }
+        return filmsLessThan;
     }
 
 
