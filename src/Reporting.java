@@ -36,5 +36,13 @@ public class Reporting {
         }
         return currentHighestStudio;
 
+
+    }
+    public List<Film> allFilmsEarningsLessThan(float amount) {
+        List<Film> filmsWithEarningsLessThan = new ArrayList<>();
+        for (FilmStudio filmStudio : studios) {
+            filmsWithEarningsLessThan.addAll(filmStudio.filmsLessThan(amount));
+        }
+        return filmsWithEarningsLessThan;
     }
 }
