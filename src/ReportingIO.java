@@ -54,6 +54,19 @@ public class ReportingIO {
                 String studio_name_input = input.nextLine();
                 System.out.println(reporting.getStudio(studio_name_input).getFilms());
             }
+            if (user_input == 5) {
+                System.out.println("Enter a year to find out the studio with the largest box office earnings: ");
+                int year = input.nextInt();
+                System.out.println("Enter an amount of earnings to see which films fell short: ");
+                int amount = input.nextInt();
+                System.out.println("The studio with the largest box office earnings in " +
+                        year + "was " + reporting.largestStudioAverageEarnings(year));
+                System.out.println("The longest film ever made was " + reporting.longestFilmEverMade());
+                System.out.println("A list of the films that fell short of the input amount:");
+                for (Film films : reporting.allFilmsEarningsLessThan(amount)) {
+                    System.out.println(films);
+                }
+            }
             if (user_input == 6) {
                 end_program = true;
 
