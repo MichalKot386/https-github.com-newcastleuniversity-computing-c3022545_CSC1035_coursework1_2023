@@ -29,7 +29,22 @@ public class ReportingIO {
                 System.out.println("You have successfully added a new film studio");
             }
             if (user_input == 2) {
-                Scanner film_data_scanner = new Scanner(System.in);
+                System.out.println("Enter the film studios name: ");
+                String studio_name = input.nextLine();
+                FilmStudio filmStudio = reporting.getStudio(studio_name);
+
+                System.out.println("Enter the films title: ");
+                String title = input.nextLine();
+                System.out.println("Enter the year of release: ");
+                int year = input.nextInt();
+                System.out.println("Enter the runtime in minutes: ");
+                int runtime = input.nextInt();
+                System.out.println("Enter the films box office earnings in pounds: ");
+                int earnings = input.nextInt();
+                System.out.println("Enter the films genre: ");
+                String genre = input.nextLine();
+                Film film = new Film(title, year, runtime, earnings, genre);
+                filmStudio.addFilm(film);
             }
             if (user_input == 3) {
                 System.out.println(reporting.getStudios());
