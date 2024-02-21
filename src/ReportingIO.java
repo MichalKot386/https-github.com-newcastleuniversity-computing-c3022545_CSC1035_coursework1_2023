@@ -1,11 +1,16 @@
 import java.util.Scanner;
 
 public class ReportingIO {
-    boolean end_program = false
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
+        boolean end_program = false;
+
+        Reporting reporting = new Reporting();
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Welcome to the film studio interface program!");
+
         while (end_program != true) {
-            System.out.println("Welcome to the film studio interface program!");
             System.out.println("1. Enter film studio data");
             System.out.println("2. Enter film data");
             System.out.println("3. List all film studios");
@@ -13,15 +18,32 @@ public class ReportingIO {
             System.out.println("5. Provide a statistical report");
             System.out.println("6. Exit");
 
-            Scanner input = new Scanner(System.in);
-            System.out.println("Please enter the number of the option you would like run: ");
+            System.out.println("Please enter the number of the option you would like to run: ");
 
             int user_input = input.nextInt();
             if (user_input == 1) {
                 System.out.println("Please enter the studio name: ");
                 String studio_name_input = input.nextLine();
                 FilmStudio new_film_studio = new FilmStudio(studio_name_input);
+                reporting.addStudio(new_film_studio);
+                System.out.println("You have successfully added a new film studio");
+            }
+            if (user_input == 2) {
+                Scanner film_data_scanner = new Scanner(System.in);
+            }
+            if (user_input == 3) {
+                System.out.println(reporting.getStudios());
+            }
+            if (user_input == 4) {
+                System.out.println("Please enter the studio name: ");
+                String studio_name_input = input.nextLine();
+                System.out.println(reporting.getStudio(studio_name_input).getFilms());
+            }
+            if (user_input == 6) {
+                end_program = true;
+
             }
         }
     }
+
 }

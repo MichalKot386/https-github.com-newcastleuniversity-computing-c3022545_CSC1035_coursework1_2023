@@ -10,7 +10,11 @@ public class FilmStudio {
         this.films = new ArrayList<>();
     }
     public void addFilm(Film film) {
+
         films.add(film);
+    }
+    public List<Film> getFilms() {
+        return films;
     }
     public String getStudio_name() {
         return studio_name;

@@ -12,6 +12,20 @@ public class Reporting {
         studios.add(studio);
     }
 
+    public List<FilmStudio> getStudios() {
+        return studios;
+    }
+
+    public FilmStudio getStudio(String studio_name) {
+        FilmStudio studio = null;
+        for (FilmStudio film : studios) {
+            if (film.getStudio_name() == studio_name) {
+                studio = film;
+            }
+        }
+        return studio;
+    }
+
     public Film longestFilmEverMade() {
         Film longestFilm = null;
         int longest = 0;
