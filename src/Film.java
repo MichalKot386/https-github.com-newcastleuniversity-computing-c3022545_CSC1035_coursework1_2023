@@ -1,11 +1,13 @@
 public class Film {
+    // Define class fields
     String title;
     int release_year;
     int length;
     int earnings;
     String genre;
 
-    public Film(String title, int release_year, int length, int earnings, String genre) {
+    public Film(String title, int release_year, int length, int earnings, String genre) { // Constructor method for the Film class
+        // Assign attributes to the film object
         this.title = title;
         this.release_year = release_year;
         this.length = length;
@@ -17,6 +19,7 @@ public class Film {
         Film film = new Film("pacific", 2020, 90, 1300, "action");
         System.out.println(film.length);
     }
+    // Get methods
     public String getTitle() {
         return title;
     }
